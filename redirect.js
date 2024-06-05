@@ -21,6 +21,7 @@ async function checkDomain(domain) {
 
 // Função para redirecionar para o primeiro domínio disponível
 async function redirectToAvailableDomain() {
+    console.log("redirectToAvailableDomain function called");
     for (const domain of domains) {
         const isAvailable = await checkDomain(domain);
         if (isAvailable) {
@@ -34,3 +35,4 @@ async function redirectToAvailableDomain() {
 
 // Iniciar a verificação e redirecionamento ao carregar a página
 window.onload = redirectToAvailableDomain;
+console.log("Script externo carregado e função atribuída ao window.onload");
