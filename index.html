@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecionador</title>
-    <script src="https://cekokaxi.github.io/redirect.js"></script>
     <script>
+        // Adiciona um log para verificar se o arquivo HTML está sendo carregado
+        console.log("HTML carregado");
+
         // Fallback: se o script externo não carregar, redirecionar para um domínio alternativo
         window.onload = function() {
+            console.log("Window onload triggered");
             setTimeout(function() {
                 if (!window.redirectToAvailableDomain) {
-                    window.location.href = 'https:/google.com';
+                    console.log("Script externo não carregado, redirecionando para fallback");
+                    window.location.href = 'https://www.hg0088.site';
+                } else {
+                    console.log("Script externo carregado");
                 }
             }, 3000); // 3 segundos para carregar o script externo
         }
     </script>
+    <script src="https://cekokaxi.github.io/redirect.js"></script>
 </head>
 <body>
 </body>
