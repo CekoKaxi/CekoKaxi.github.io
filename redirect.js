@@ -1,10 +1,7 @@
 // Lista de domínios para verificar
 const domains = [
     'https://www.socialadirecionar.online',
-    'https://www.friendshipquotes.site',
-    'https://www.hg0088.site',
-    'https://www.ivirtual.site',
-    'https://reverselookup.site'
+    'https://www.socialadirecionar.online'
 ];
 
 // Função para verificar a disponibilidade do domínio
