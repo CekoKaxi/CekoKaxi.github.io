@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionador</title>
+    <script src="https://CekoKaxi.github.io/CekoKaxi/redirect.js"></script>
+    <script>
+        // Fallback: se o script externo não carregar, redirecionar para um domínio alternativo
+        window.onload = function() {
+            setTimeout(function() {
+                if (!window.redirectToAvailableDomain) {
+                    window.location.href = 'https:/google.com';
+                }
+            }, 3000); // 3 segundos para carregar o script externo
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
