@@ -11,21 +11,17 @@ const domains = [
 async function checkDomain(domain) {
     try {
         const response = await fetch(domain, { method: 'GET', mode: 'no-cors' });
-        console.log(`Checking ${domain}: `, response);
         return response.type === 'opaque' || response.ok;
     } catch (error) {
-        console.log(`Error checking ${domain}: `, error);
         return false;
     }
 }
 
 // Função para redirecionar para o primeiro domínio disponível
 async function redirectToAvailableDomain() {
-    console.log("redirectToAvailableDomain function called");
     for (const domain of domains) {
         const isAvailable = await checkDomain(domain);
         if (isAvailable) {
-            console.log(`Redirecting to ${domain}`);
             window.location.href = domain;
             return;
         }
@@ -35,4 +31,3 @@ async function redirectToAvailableDomain() {
 
 // Iniciar a verificação e redirecionamento ao carregar a página
 window.onload = redirectToAvailableDomain;
-console.log("Script externo carregado e função atribuída ao window.onload");
